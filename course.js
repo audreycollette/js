@@ -1,34 +1,53 @@
 console.log("allo");
 console.log("hello \n you");
-//commentaire
-console.log (4*2);
-var name=prompt("enter name!");
-alert ("hello"+ name);
-var number=Number (prompt("enter a number"));
-if (number>1){
-	console.log (number + "plus grand que 1");
-}else if (number<1){
-	console.log (number+ " plus petit que 1");
+
+var name = prompt("enter name!");
+sayHello();
+
+var upperCase = name.toUpperCase();
+console.log(upperCase);
+
+for(var i = 0; i < name.length; i++) {
+	console.log(name[i]);
 }
-else{
-	console.log (number+"cest 1");
+
+function sayHello() {
+	console.log("Hello " + name + " !");
 }
-var number2= Number (prompt("enter un autre chiffre"));
-if ((number2 >1) && (number2<100)){
-console.log (number2+ "entre 1 et 100 exclusivement");
+
+var garcon = {
+	init: function (nom, age, jeuxPrefere){
+		this.nom = nom,
+		this.age = age,
+		this.jeuxPrefere = jeuxPrefere
+	},
+	decrit: function(){
+		var description =  this.nom + " a " + this.age + " ans et aime jouer à " + this.jeuxPrefere;
+		return description;
+	}
 }
-else{
-	console.log (number2+"c'Est autre");
-}	
-var number3= Number (prompt("encore"));
-while (number3<100){
-console.log (number3);
-number3++;
+var amoureux = Object.create(garcon);
+amoureux.init("Antoine", 24, "Smash");
+
+var lamidemonamoureux = Object.create(garcon);
+lamidemonamoureux.init("Brunoooooo", 24, "Smash");
+lamidemonamoureux.jeuxPrefere = "rien";
+
+console.log (amoureux.decrit());
+console.log (lamidemonamoureux.decrit());
+
+/*var amoureux = {
+	nom: "Antoine",
+	age: 24,
+	jeuxPrefere: "Smash",
+	decrit: function(){
+		var description =  this.nom + " a " + this.age + " ans et aime jouer à " + this.jeuxPrefere;
+		return description;
+	}
 }
-for (number4=100; number4<105; number4++){
-	console.log (number4);
-}
-function sayHello (){
-	console.log ("Hello! "+ name + " !");
-}
-sayhello ();
+console.log (amoureux.decrit());
+
+var lamidemonamoureux = Object.create(amoureux);
+lamidemonamoureux.nom = "Bruno!!!!!";
+
+console.log (lamidemonamoureux.decrit());*/
