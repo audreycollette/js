@@ -24,7 +24,11 @@ var garcon = {
 	decrit: function(){
 		var description =  this.nom + " a " + this.age + " ans et aime jouer à " + this.jeuxPrefere;
 		return description;
-	}
+	},
+	ecole: function(){
+		var alleralecole = this.nom + " va à l'université de Sherbrooke depuis qu'il a " + (this.age-4) + " ans.";
+		return alleralecole;
+	},
 }
 var amoureux = Object.create(garcon);
 amoureux.init("Antoine", 24, "Smash");
@@ -35,7 +39,8 @@ lamidemonamoureux.jeuxPrefere = "rien";
 
 console.log (amoureux.decrit());
 console.log (lamidemonamoureux.decrit());
-
+console.log (amoureux.ecole());
+console.log (lamidemonamoureux.ecole());
 /*var amoureux = {
 	nom: "Antoine",
 	age: 24,
